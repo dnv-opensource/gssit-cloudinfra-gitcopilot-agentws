@@ -29,7 +29,7 @@ This repo hosts **labs, demos and materials** for the workshop.
 
 ### Structure
 
-- **`labs/`** — Lab guides and hands-on exercises (L1–L5 + capstone)
+- **`labs/`** — Lab guides and hands-on exercises
 - **`demos/`** — Demo materials
 - **`presentations/`** — Slide decks
 
