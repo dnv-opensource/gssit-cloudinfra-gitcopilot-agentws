@@ -25,17 +25,13 @@ This workshop teaches **GitHub Copilot** and **AI Agent patterns** to DNV's GSS 
 
 ## 📁 This Repository
 
-This repo hosts **planning documents, labs, demos, and facilitator materials** for the workshop. It is **internal** and separate from the customer-facing workshop repository.
+This repo hosts **labs, demos and materials** for the workshop.
 
-### Structure (as organized by the team)
+### Structure
 
-- **`docs/planning/`** — Phase 1–2 scoping and delivery planning, run-of-show
 - **`labs/`** — Lab guides and hands-on exercises (L1–L5 + capstone)
-- **`demos/`** — Demo materials, reference implementations, and facilitator guides
-- **`presentations/`** — Slide decks and speaker notes
-- **`environment/`** — Attendee environment setup, verification, and troubleshooting
-
-This repo hosts internal planning and source materials. Participant and customer-facing lab materials can be staged or mirrored to the **[customer workshop repository](https://github.com/dnv-opensource/gssit-cloudinfra-gitcopilot-agentws)** in the DNV open-source organization.
+- **`demos/`** — Demo materials
+- **`presentations/`** — Slide decks
 
 ---
 
