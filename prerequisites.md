@@ -91,7 +91,7 @@ git --version
 ### 5. Install GitHub CLI
 
 ```powershell
-winget install --id=GitHub.cli -e
+winget install --id=GitHub.cli --scope user -e
 ```
 
 Verify:
