@@ -160,7 +160,7 @@ Get-ComputerInfo | Select-Object OSName
 Write-Host "`n=== VS Code ===" -ForegroundColor Green
 code --version
 
-# 3. Check PowerShell version
+# 3. Check PowerShell version (we recommend at least version 7.4)
 Write-Host "`n=== PowerShell ===" -ForegroundColor Green
 $PSVersionTable.PSVersion
 
@@ -223,11 +223,11 @@ If you see suggestions, **Copilot is working!**
 
 ## 🆘 Troubleshooting
 
-### "VS Code doesn't have the Copilot extension"
+### "VS Code doesn't have the Copilot Chat extension"
 
 1. Open VS Code
 2. Press `Ctrl+Shift+X` (Extensions)
-3. Search for **"GitHub Copilot"** (by GitHub)
+3. Search for **"GitHub Copilot Chat"** (by GitHub)
 4. Click **Install**
 5. After install, you may be prompted to sign in — follow the browser flow
 6. Restart VS Code
