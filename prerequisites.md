@@ -328,7 +328,7 @@ If you encounter problems during setup:
    - Output of the verification script
    - Your OS and tool versions
 
-We will also do a **technical soundcheck** on May 19 at 13:45 (15 min before start) in Teams.
+We will also do a **technical soundcheck** on May 26 at 13:45 (15 min before start) in Teams.
 
 ---
 
