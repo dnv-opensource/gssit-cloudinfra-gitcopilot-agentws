@@ -7,7 +7,7 @@
 This workshop teaches **GitHub Copilot** and **AI Agent patterns** to DNV's GSS IT Cloud Infrastructure team. Participants will learn practical workflows, safety guardrails, and build working agents aligned to DNV's infrastructure and documentation needs.
 
 **Format:** Two ~4-hour sessions on separate days
-**Dates:** May 19 and May 26, 2026
+**Dates:** May 26 and June 15, 2026
 **Time:** 14:00–18:00 Norway time
 **Delivery:** Remote (Teams)
 
@@ -60,7 +60,7 @@ See **[prerequisites.md](./prerequisites.md)** for detailed setup steps, verific
 
 ## 📅 Workshop Agenda
 
-### Session 1: May 19, 2026 (14:00–18:00 Norway time)
+### Session 1: May 26, 2026 (14:00–18:00 Norway time)
 
 | Time | Topic | Format |
 |------|-------|--------|
@@ -74,7 +74,7 @@ See **[prerequisites.md](./prerequisites.md)** for detailed setup steps, verific
 | 16:55–17:30 | From Assistant to Agent — The Paradigm Shift | Presentation |
 | 17:30–18:00 | Recap, Q&A, homework | Wrap-up |
 
-### Session 2: May 26, 2026 (14:00–18:00 Norway time)
+### Session 2: June 15, 2026 (14:00–18:00 Norway time)
 
 | Time | Topic | Format |
 |------|-------|--------|
