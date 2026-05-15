@@ -93,6 +93,7 @@ git --version
 ```powershell
 winget install --id=GitHub.cli --scope user -e
 ```
+> Should you experience issues with the installation due to that an UAC-prompt (rather than a BeyondTrust-prompt) requires you to specify a user with local admin rights (instead of just performing elevation through BeyondTrust utilizing the *Flex*-profile for your user on your machine), then please just download the MSI (see link under the [winget install fails or times out](#winget-install-fails-or-times-out) heading later in this document) and run it manually by double-clicking on it (this would allow BeyondTrust to detect the Windows Installer requires elevation and then prompt for that).
 
 Verify:
 
