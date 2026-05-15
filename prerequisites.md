@@ -308,7 +308,7 @@ Once you've completed all steps and verified your setup, you're ready for the wo
 - ✅ GitHub Copilot CLI extension (authenticated)
 - ✅ Workshop repository cloned
 
-**Day-of checklist (May 19):**
+**Day-of checklist (May 26):**
 - Restart your machine (clean state)
 - Open VS Code and verify Copilot is active
 - Test `gh auth status` (shows your username)
