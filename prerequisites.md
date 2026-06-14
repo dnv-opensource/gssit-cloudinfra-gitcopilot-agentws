@@ -12,6 +12,7 @@ Before the workshop, ensure you have:
 
 - [ ] **Windows 11** (or latest Windows with winget available)
 - [ ] **GitHub account** with an active **GitHub Copilot license**
+- [ ] **Node.js LTS** (required for GitHub Copilot CLI)
 - [ ] **VS Code** with GitHub Copilot extension
 - [ ] **PowerShell 7+** (for command-line labs)
 - [ ] **Git** (for cloning repos)
@@ -41,7 +42,26 @@ If `winget` is not available, [install Windows Package Manager](https://learn.mi
 
 ---
 
-### 2. Install VS Code
+### 2. Install Node.js LTS
+
+**⚠️ Important:** The GitHub Copilot CLI requires Node.js. Install it first.
+
+```powershell
+winget install --id=OpenJS.NodeJS.LTS -e
+```
+
+Verify:
+
+```powershell
+node --version
+npm --version
+```
+
+You should see versions for both `node` and `npm`. If the versions don't display, **close and reopen your PowerShell terminal** to refresh the PATH.
+
+---
+
+### 3. Install VS Code
 
 ```powershell
 winget install --id=Microsoft.VisualStudioCode -e
@@ -52,7 +72,7 @@ After installation, open VS Code and verify it launches without errors.
 
 ---
 
-### 3. Install PowerShell 7
+### 4. Install PowerShell 7
 
 ```powershell
 winget install --id=Microsoft.PowerShell -e
@@ -74,7 +94,7 @@ Should show version **7.x** or later.
 
 ---
 
-### 4. Install Git
+### 5. Install Git
 
 ```powershell
 winget install --id=Git.Git -e
@@ -88,7 +108,7 @@ git --version
 
 ---
 
-### 5. Install GitHub CLI
+### 6. Install GitHub CLI
 
 ```powershell
 winget install --id=GitHub.cli --scope user -e
@@ -103,7 +123,7 @@ gh --version
 
 ---
 
-### 6. Authenticate GitHub CLI
+### 7. Authenticate GitHub CLI
 
 ```powershell
 gh auth login
@@ -124,7 +144,7 @@ gh auth status
 
 ---
 
-### 7. Verify GitHub Copilot CLI is Ready
+### 8. Verify GitHub Copilot CLI is Ready
 
 The Copilot CLI uses your authenticated GitHub CLI session. Verify authentication:
 
@@ -246,6 +266,41 @@ gh auth login
 ```
 
 Follow the prompts again, choosing `HTTPS` or `SSH` as your preference.
+
+---
+
+### "GitHub Copilot CLI installer fails: npm is not available"
+
+**Symptom:**
+```
+Install GitHub Copilot CLI? (y/N): y
+npm is not available or installation failed. Trying winget...
+Cannot find GitHub Copilot CLI (https://docs.github.com/en/copilot/how-tos/set-up/inst...)
+```
+
+**Cause:** Node.js / npm is not installed or not in your PATH.
+
+**Fix (Windows):**
+```powershell
+# Install Node.js LTS
+winget install OpenJS.NodeJS.LTS
+
+# Close and reopen your PowerShell terminal to refresh the PATH
+# Then verify Node.js is available
+node --version
+npm --version
+
+# Re-run the Copilot CLI installer
+gh copilot -i "test"
+```
+
+**Fix (macOS):**
+```bash
+brew install node
+```
+
+**Fix (Linux):**
+Use your package manager (e.g., `apt-get install nodejs`, `yum install nodejs`, or `nvm install node`).
 
 ---
 
