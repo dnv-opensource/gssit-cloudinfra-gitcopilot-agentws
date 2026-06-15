@@ -1,0 +1,51 @@
+// ============================================================================
+// L4 Track B — sample KQL queries
+//
+// These are the canonical queries the lab walks attendees through. Azure MCP
+// runs KQL against the Log Analytics workspace you deployed in Step 3.
+//
+// Replace <rg-name> with your actual RG name when running by hand. The agent
+// will substitute it automatically when you mention the RG in your prompt.
+// ============================================================================
+
+
+// --- Step 5: AzureActivity for the RG (last hour) ---------------------------
+// Note: AzureActivity is only populated if a subscription-level diagnostic
+// setting forwards it into your workspace. Fresh sandbox subs usually have
+// this; if your query returns no rows, fall back to the Resource Graph query
+// at the bottom of this file.
+AzureActivity
+| where TimeGenerated > ago(1h)
+| where ResourceGroup =~ "<rg-name>"
+| project TimeGenerated, OperationNameValue, ActivityStatusValue, Caller, ResourceProviderValue
+| order by TimeGenerated desc
+| take 50
+
+
+// --- Stretch Step 7: storage account blob operations ------------------------
+// Requires the stretch step that adds an azurerm_storage_account with a
+// diagnostic setting forwarding StorageBlobLogs into this workspace.
+StorageBlobLogs
+| where TimeGenerated > ago(15m)
+| summarize Calls = count() by OperationName, StatusCode
+| order by Calls desc
+
+
+// --- Heartbeat (always present in any LAW) ----------------------------------
+// Use this if the agent says "the workspace is empty" — Heartbeat populates
+// within ~2 minutes of the workspace existing, so it's the safest "is this
+// workspace alive?" probe.
+Heartbeat
+| where TimeGenerated > ago(10m)
+| summarize LastSeen = max(TimeGenerated) by Computer, ResourceGroup
+
+
+// ============================================================================
+// Fallback when AzureActivity is empty: Azure Resource Graph
+// Azure MCP exposes the Resource Graph as a separate tool; run this directly
+// instead of as KQL-against-LAW.
+//
+// resources
+// | where resourceGroup =~ "<rg-name>"
+// | project name, type, location, properties.provisioningState
+// ============================================================================

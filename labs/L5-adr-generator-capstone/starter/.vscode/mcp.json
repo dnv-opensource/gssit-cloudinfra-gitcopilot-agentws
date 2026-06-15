@@ -1,0 +1,12 @@
+{
+  // GitHub MCP server (official, hosted by GitHub).
+  // Uses OAuth via your VS Code GitHub sign-in — no PAT required.
+  // Tools appear in the agent picker as `github/*` (e.g. `github/create_pull_request`).
+  // Docs: https://github.com/github/github-mcp-server
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  }
+}

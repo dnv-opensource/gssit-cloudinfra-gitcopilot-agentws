@@ -1,0 +1,14 @@
+{
+    "servers": {
+        "WorkshopDemo": {
+            "type": "stdio",
+            "command": "pwsh",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "MCPServerPS\\Start-MyMCP -Module 'C:\\repos\\gssit-cloudinfra-gitcopilot-agentws\\labs\\L4-custom-agent-mcp\\track-a-powershell-mcp\\solution\\WorkshopDemo\\WorkshopDemo.psd1'"
+            ]
+        }
+    },
+    "inputs": []
+}

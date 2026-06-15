@@ -1,0 +1,29 @@
+# Copy this file to `terraform.auto.tfvars` (drop the .example suffix) and
+# personalize before you deploy.
+#
+# Why this filename: Terraform auto-loads any file matching `*.auto.tfvars`,
+# so once you've renamed and edited it, you do not need to pass `-var-file`
+# on the command line — `terraform plan` / `apply` pick it up automatically.
+# Without a *.auto.tfvars (or terraform.tfvars) file, Terraform prompts on
+# stdin for each variable, and an agent-driven run will look stuck on
+# "Enter a value:" until you click into the terminal and type.
+#
+# The default values below are deliberately INVALID — the resource_group_name
+# placeholder fails the validation regex in variables.tf, so if you forget to
+# personalize you get a clear `terraform validate` error pointing at this file
+# (rather than a silent deploy of a clashing RG name in the shared sandbox).
+#
+# Naming rule for resource_group_name (enforced by variables.tf validation):
+#   rg-l4-<lowercase-username-or-initials>-<short-suffix>
+#   e.g.  rg-l4-jegi-001     rg-l4-anna-demo     rg-l4-bg-prod1
+# Pattern: ^rg-l4-[a-z0-9-]+$ (lowercase letters, digits, hyphens only)
+# Stay unique — you're sharing the sandbox subscription with the rest of the room.
+
+resource_group_name      = "REPLACEME"     # fails validation on purpose — must edit
+location                 = "westeurope"    # change if your sandbox sub is regionally restricted
+workspace_retention_days = 30              # 30 is the minimum for the PerGB2018 SKU; max 730
+
+tags = {
+  workshop = "gssit-cloudinfra-gitcopilot-agentws-l4-track-b"
+  owner    = "REPLACEME"
+}

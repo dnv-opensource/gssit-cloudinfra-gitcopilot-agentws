@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "terraform": {
+      "type": "stdio",
+      "command": "C:\\tools\\terraform-mcp-server\\terraform-mcp-server.exe"
+    },
+    "drawio": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@drawio/mcp"
+      ]
+    }
+  }
+}
