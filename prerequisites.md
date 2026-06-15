@@ -657,13 +657,13 @@ Both should report versions. If not, [reinstall Node.js LTS from Day 1 prereqs](
 
 The DrawIO MCP server runs on-demand via `npx` when wired into VS Code Copilot settings. No manual install needed now — configuration happens during **L4 Custom Agent Config & MCP Integration**.
 
-**Verify DrawIO CLI availability:**
+**Verify DrawIO MCP can start:**
 
 ```powershell
-npx @drawio/mcp --help
+npx @drawio/mcp
 ```
 
-You should see help text. If `npx` times out, check internet connectivity and that Node.js is in your PATH (close and reopen PowerShell).
+You should see `Draw.io MCP server running on stdio`. Press `Ctrl+C` to stop it — VS Code will launch it automatically once it's wired into `mcp.json` in L4. If `npx` times out, check internet connectivity and that Node.js is in your PATH (close and reopen PowerShell).
 
 **Graceful fallback:**
 
