@@ -415,7 +415,7 @@ We will also do a **technical soundcheck** on May 26 at 13:45 (15 min before sta
 | **M12 MCP Showcase** | DrawIO + local server setup | Diagram generation and visualization |
 | **M12 MCP Showcase** | PowerShell MCP | Execute PowerShell commands via agents |
 | **L4 Custom Agent (Track A)** | MCPServerPS PowerShell module | Build a cmdlet, expose it as an MCP tool, scope an agent |
-| **L4 Custom Agent (Track B)** | Terraform CLI + Azure CLI + sandbox sub | Deploy infra via Terraform MCP, query it via Azure MCP |
+| **L4 Custom Agent (Track B)** | Terraform CLI + Azure CLI + sandbox sub (`PlayGround VerIT Infrastructure Development`) | Deploy infra via Terraform MCP, query it via Azure MCP |
 | **L5 Capstone ADR Architect** | None new — uses VS Code Copilot only | Agent customized from awesome-copilot writes a real ADR by scanning a Terraform fixture |
 
 ---
@@ -482,7 +482,7 @@ A browser window will open — authenticate with your DNV Azure credentials. Ret
 az account show --query name -o tsv
 ```
 
-You should see your subscription name (e.g., `DNV Sandbox` or similar).
+You should see your subscription name `PlayGround VerIT Infrastructure Development` (ID: `26a6717f-ee24-4802-bda7-0a17b0790911`).
 
 #### Install the Azure MCP Server (VS Code)
 
@@ -782,9 +782,11 @@ If both commands return a hit, Track A is ready. MCPServerPS does the JSON-RPC l
 
 - **Terraform CLI** (1.6+) — install instructions above in the M12 Terraform MCP section
 - **Azure CLI** (2.50+) — install instructions above in the M12 Cloud MCP section
-- **Sandbox Azure subscription access** — confirm with the facilitator which sub you'll use; you must have permission to create your own RG (pattern `rg-l4-<initials>-<random>`)
+- **Sandbox Azure subscription access** — you've been granted **Contributor** in the **`PlayGround VerIT Infrastructure Development`** subscription (id `26a6717f-ee24-4802-bda7-0a17b0790911`). Sign in with your **admin account** (`adm[veritSign]@dnv.onmicrosoft.com`) — not your everyday DNV upn.
 - **Terraform MCP server** loaded in VS Code (already configured per M12 prereqs)
 - **Azure MCP server** loaded in VS Code (already configured per M12 prereqs)
+
+> **Your dedicated RG** (`GitHubCopilotWs[veritSign]-NonProd-RG-WE`) is pre-created in the same subscription as a personal scratch space. **L4 Track B creates a separate, lab-specific RG** via Terraform (pattern `rg-l4-<initials>-<random>`) — that's the lab's own surface and is destroyed at the end. Use the pre-created dedicated RG for any exploration outside the lab.
 
 Verify Track B readiness:
 
@@ -794,11 +796,13 @@ terraform --version          # 1.6+
 az --version                 # 2.50+
 
 # Auth + sandbox sub
-az login
+az login                     # sign in with adm[veritSign]@dnv.onmicrosoft.com
 az account show --query "{name:name, id:id}" -o table
-# If multiple subs are shown, set the sandbox one the facilitator named:
-az account set --subscription "<sandbox-sub-id-or-name>"
+# If the active sub is not the sandbox, pin it explicitly:
+az account set --subscription "26a6717f-ee24-4802-bda7-0a17b0790911"
 ```
+
+Expected: `name = PlayGround VerIT Infrastructure Development`, `id = 26a6717f-ee24-4802-bda7-0a17b0790911`.
 
 In VS Code: open the MCP panel (Command Palette → **MCP: List Servers**) and confirm both `terraform` and `azure` show ✅ tools loaded.
 
@@ -846,5 +850,5 @@ By the start of Day 2 (June 15, 14:00), ensure:
 
 ---
 
-**Last updated:** June 12, 2026
+**Last updated:** June 15, 2026
 **For Day 2 questions:** Contact Jan Egil Ring or Haflidi Fridthjofsson
