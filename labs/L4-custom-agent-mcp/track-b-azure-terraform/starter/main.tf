@@ -32,37 +32,23 @@ provider "azurerm" {
 #   - resource "azurerm_log_analytics_workspace" "main" {}    (in main RG)
 # ----------------------------------------------------------------------------
 
-resource "azurerm_resource_group" "main" {
-  name     = var.resource_group_name
-  location = var.location
-  tags     = var.tags
-}
+# resource "azurerm_resource_group" "main" {
+#   ...
+# }
 
-resource "azurerm_log_analytics_workspace" "main" {
-  name                = var.workspace_name
-  resource_group_name = azurerm_resource_group.main.name
-  location            = var.location
-  sku                 = "PerGB2018"
-  retention_in_days   = var.workspace_retention_days
-  tags                = var.tags
-}
+# resource "azurerm_log_analytics_workspace" "main" {
+#   ...
+# }
 
 # ----------------------------------------------------------------------------
 # Outputs let you (and the agent) reference the deployed resources by name
-# in Step 4.
+# in Step 4. Uncomment once the resources above exist.
 # ----------------------------------------------------------------------------
 
-output "resource_group_name" {
-  description = "Name of the Azure Resource Group."
-  value       = azurerm_resource_group.main.name
-}
-
-output "workspace_id" {
-  description = "Resource ID of the Log Analytics Workspace."
-  value       = azurerm_log_analytics_workspace.main.id
-}
-
-output "workspace_customer_id" {
-  description = "The Workspace (Customer) ID for the Log Analytics Workspace."
-  value       = azurerm_log_analytics_workspace.main.workspace_id
-}
+# output "resource_group_name" {
+#   value = azurerm_resource_group.main.name
+# }
+#
+# output "workspace_id" {
+#   value = azurerm_log_analytics_workspace.main.id
+# }
