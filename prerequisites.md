@@ -13,7 +13,7 @@ Before the workshop, ensure you have:
 - [ ] **Windows 11** (or latest Windows with winget available)
 - [ ] **GitHub account** with an active **GitHub Copilot license**
 - [ ] **Node.js LTS** (required for GitHub Copilot CLI)
-- [ ] **VS Code 1.124 or later** with GitHub Copilot extension (L3 Round 1 uses **Plan Mode**, and Autopilot-on-by-default behavior is from this release)
+- [ ] **VS Code 1.124 or later** with GitHub Copilot Chat extension (L3 Round 1 uses **Plan Mode**, and Autopilot-on-by-default behavior is from this release)
 - [ ] **PowerShell 7+** (for command-line labs)
 - [ ] **Pester 5+** PowerShell module (required for L3 — Agent Mode generates Pester-based tests; pwsh 7 does not ship with Pester)
 - [ ] **Git** (for cloning repos)
@@ -366,7 +366,7 @@ Once you've completed all steps and verified your setup, you're ready for the wo
 
 **Quick summary:**
 - ✅ Windows 11 with WinGet
-- ✅ VS Code with GitHub Copilot extension
+- ✅ VS Code with GitHub Copilot Chat extension
 - ✅ PowerShell 7
 - ✅ Git and GitHub CLI (authenticated)
 - ✅ GitHub Copilot CLI extension (authenticated)
@@ -422,28 +422,14 @@ We will also do a **technical soundcheck** on May 26 at 13:45 (15 min before sta
 
 ### M10: Agent Mode — Verify Already Enabled
 
-Agent Mode should be enabled from Day 1 setup. Verify in VS Code:
-
-1. Open VS Code
-2. Press `Ctrl+Shift+D` (Run and Debug) or click the Run icon on the left
-3. Look for **Copilot** in the Debug Console dropdown
-4. If you see **Copilot** as an option, Agent Mode is ready
-
-**Verification command:**
-
-```powershell
-# Open VS Code settings (GUI check)
-code --file-uri "vscode://settings/extensions.ignoreRecommendations"
-```
-
-In VS Code Extensions, search for **"GitHub Copilot"** — ensure you see **GitHub.copilot** (not just Chat) installed. Agent Mode is bundled with the main Copilot extension.
+Agent Mode ships with the GitHub Copilot Chat extension. In VS Code Extensions, search for **"GitHub Copilot Chat"** and ensure **GitHub.copilot-chat** is installed. Agent Mode (and Plan Mode) live inside this extension — the older standalone **GitHub.copilot** extension is deprecated and not required.
 
 **Fallback if Agent Mode is missing:**
 
-If Agent Mode isn't available, reinstall the Copilot extension:
+If Agent Mode isn't available, reinstall the Copilot Chat extension:
 
 ```powershell
-code --install-extension GitHub.copilot
+code --install-extension GitHub.copilot-chat
 ```
 
 ---
@@ -850,5 +836,5 @@ By the start of Day 2 (June 15, 14:00), ensure:
 
 ---
 
-**Last updated:** June 15, 2026
+**Last updated:** June 15, 2026  
 **For Day 2 questions:** Contact Jan Egil Ring or Haflidi Fridthjofsson
