@@ -5,28 +5,13 @@
 # hand — that is the agent's job in this lab.
 
 function Get-RetentionDays {
-    <#
-    .SYNOPSIS
-    Gets backup retention days for an environment.
-
-    .DESCRIPTION
-    Returns the standard retention period in days for supported environments.
-
-    .EXAMPLE
-    Get-RetentionDays -Environment dev
-    #>
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [ValidateSet('dev', 'test', 'prod')]
-        [string]$Environment
-    )
-
-    switch ($Environment.ToLowerInvariant()) {
-        'dev' { return 7 }
-        'test' { return 30 }
-        'prod' { return 365 }
-    }
+    # TODO (let the agent do this):
+    #   - Add a [CmdletBinding()] cmdlet with a mandatory -Environment parameter.
+    #   - Allow only: dev, test, prod (case-insensitive).
+    #   - Return an int: dev = 7, test = 30, prod = 365.
+    #   - Reject any other value.
+    #   - Add comment-based help (.SYNOPSIS / .DESCRIPTION / .EXAMPLE).
+    throw 'Not implemented yet — drive Agent Mode to build this.'
 }
 
-Export-ModuleMember -Function Get-RetentionDays
+# TODO (let the agent do this): export the function so the test harness can call it.
