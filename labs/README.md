@@ -120,7 +120,7 @@ Progressive hands-on labs building from **first contact** (L1) through **agent a
 1. **Complete setup:** Follow [prerequisites.md](../prerequisites.md) — 20–30 minutes
 2. **Verify authentication:** Run `gh auth status` to confirm you're logged in
 3. **Test Copilot:** Run `gh copilot -i "explain git status"` to confirm Copilot CLI is working
-4. **Have VS Code ready:** Launch VS Code and confirm GitHub Copilot extensions are installed
+4. **Have VS Code ready:** Launch VS Code and confirm the GitHub Copilot Chat extension is installed
 
 ### During the Lab (20 minutes core)
 1. **Setup Validation** (5 min): Facilitator walks through the readiness checklist

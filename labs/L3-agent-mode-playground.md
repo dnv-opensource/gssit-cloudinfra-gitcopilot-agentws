@@ -59,7 +59,7 @@ After L3:
 
 | Issue | Solution |
 |-------|----------|
-| Agent Mode missing from the chat mode selector | Reload VS Code; confirm the GitHub Copilot extension is signed in and up to date |
+| Agent Mode missing from the chat mode selector | Reload VS Code; confirm the GitHub Copilot Chat extension is signed in and up to date |
 | Agent edits files outside the lab folder | Interrupt it; re-scope to `starter/` and restate the boundary |
 | Terminal command won't run | Confirm PowerShell 7 (`pwsh --version`) is the integrated-terminal shell |
 | Agent stalls or over-engineers | Reject the plan, tighten the prompt with the explicit contract, re-run |
